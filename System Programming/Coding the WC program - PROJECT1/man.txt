@@ -1,0 +1,70 @@
+KS - LINUX MANUEL SAYFASI
+
+İSİM
+ks - her dosya için satır, kelime ve harf sayılarını yazdırır.
+
+ÖZET
+./ks [seçenek]... [dosya]...
+./ks -w B.txt
+
+AÇIKLAMA
+1-Her dosya için dosyada bulunan satır, kelime ve karakter sayısını çıktı olarak verir. Birden fazla dosya belirtilmişse toplam satır, kelime ve karakter sayısı da gösterilir.
+  Okunan değerlerden ilki satır sayısını, ikincisi kelime sayısını ve üçünsüsü de karakter sayısını verir.
+
+Örnekler
+
+./ks B.txt
+Dosya içerisindeki satır, kelime ve karakter sayısı bulunacaktır.
+
+./ks A.txt B.txt
+Hem A hem de B dosyasındaki satır, kelime ve karakter sayıları bulunacak ve toplam satır, kelime ve karakter sayısı ekrana yazdırılacaktır.
+
+2-Kullanıcı dosya listesindeki çıktıyı satır, kelime veya karakter sayısına göre listeleyebilir.
+
+Örnekler
+
+-w --> ./ks -c B.txt
+Dosya içerisindeki kelime sayısını yazdırır.
+
+-l --> ./ks -c B.txt
+Dosya içerisindeki satır sayısını yazdırır.
+
+-c --> ./ks -c B.txt
+Dosya içerisindeki karakter sayısını yazdırır.
+
+-c, w --> ./ks -c -w B.txt
+Dosya içerisindeki karakter ve kelime sayısını yazdırır.
+
+-c --> ./ks -c B.txt A.txt
+A ve B dosyalarındaki karakter sayıları hesaplanır ve toplam karakter sayısı bulunur.
+
+3-Kullanıcı tarafından hiçbir dosya belirtilmemişse standart giriş okunur. Bir kullanıcı ayrıca dosya adı olarak + sembolünü kullanarak standart girişi okumak istediğini belirtebilir.
+
+Örnekler
+
+cat B.txt | ./ks 
+Burada program hiçbir dosya bulamadığı için standart girişi okuyacaktır.
+
+cat B.txt | ./ks A.txt + A.txt
+Burada program önce A dosyasını okur ve ilgili satır, kelime ve harf sayısını bulur. Sonrasında program + sembolünü görünce standart girişi okur. Son olarak yine A dosyası okunur ve program sonlanır. 
+
+cat B.txt | ./ks -c -l A.txt + A.txt
+Komut satırı argümanları da birleştirilebilir. Çıktı her zaman komut sırası argümanlarına bakılmaksızın satır - kelime - karakter şeklinde sıralanır.
+
+HATA DURUMLARI
+
+1- Bilinmeyen dosya adı girilmesi durumunda hata mesajı verilecektir.
+./ks bilinmeyen_dosya.txt
+HATA: bilinmeyen_dosya.txt dosyası açılamıyor
+
+2- Bİlinmeyen komut satırı değişkeni girilmesi durumunda hata mesajı verilecektir ve 2 çıkış durum kodu "exit(2)" kullanılacaktır.
+./ks -o B.txt
+HATA: bilinmeyen seçenek '-o'
+
+YAZAR
+Emir Muhammet Aydemir tarafından yazıldı.
+
+TELİF HAKKI
+Özgür bir yazılımdır bu yazılımı değiştiribilir ve yeniden dağıtabilirsiniz.
+
+

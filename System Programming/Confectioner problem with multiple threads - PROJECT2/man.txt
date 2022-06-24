@@ -1,0 +1,28 @@
+Baklava yazılımı - LINUX MANUEL SAYFASI
+
+İSİM
+Baklava - tedarikçiden alınan malzemeler ile ustaların pasta yapmasını kapsar.
+
+
+AÇIKLAMA
+1) producer -> Bu fonksiyonun içerisinde usta numarası belirleniyor ve hangi malzemenin alındığı belirleniyor
+2) consumer -> Bu fonksiyonda malzeme türüne göre usta belirlenir ve malzemesi tamamlanmış ustaların bilgileri ekrana çıktı olarak gelir.
+3) findsize -> Bu fonksiyonda dosyadaki malzeme sayısını buluyorum.
+4) readfile -> Dosyadan okuduğum verileri bir pointer içerisine atıyorum
+
+
+HATA DURUMLARI
+
+1- Bilinmeyen dosya adı girilmesi durumunda hata mesajı verilecektir.
+./171419008_baklava.c bilinmeyen_dosya.txt
+HATA: bilinmeyen_dosya.txt dosyası açılamıyor
+
+2- ./171419008_baklava.c dosya girilmemesi durumunda stderr ile hata mesajı veriliyor.
+
+YAZAR
+Emir Muhammet Aydemir tarafından yazıldı.
+
+TELİF HAKKI
+Özgür bir yazılımdır bu yazılımı değiştiribilir ve yeniden dağıtabilirsiniz.
+
+
